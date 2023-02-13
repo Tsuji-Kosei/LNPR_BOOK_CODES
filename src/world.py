@@ -1,5 +1,11 @@
 import matplotlib
-matplotlib.use('MacOSX')
+import os
+if os.name == 'nt':
+    print('on Windows')
+    matplotlib.use('qtagg')
+elif os.name == 'posix':
+    print('on Mac or Linux')
+    matplotlib.use('MacOSX')
 import matplotlib.animation as anm
 import matplotlib.pyplot as plt
 
